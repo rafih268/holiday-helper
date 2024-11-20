@@ -30,4 +30,8 @@ public class TreeNode {
   public TreeNode getRight() {
     return right;
   }
+
+  public boolean isLeaf() {
+    return this.left == null && this.right == null;
+  }
 }
