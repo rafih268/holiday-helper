@@ -29,8 +29,30 @@ public class HolidaySuggester {
 
       if (cursor.isLeaf()) {
         System.out.println(cursor.getValue());
+        generateQuestion(cursor);
         restartSuggester();
       }
+    }
+  }
+
+  private static void generateQuestion(TreeNode leafNode) {
+    System.out.println("Is this satisfactory?"+CHOICE);
+    String answer = input.nextLine();
+
+    String newQuestion;
+    String newLocation;
+    if (!checkAnswer(answer)) {
+      System.out.println("What would you prefer instead?");
+      newLocation = input.nextLine();
+      System.out.println("Tell me a question that distinguishes "
+                          +leafNode.getValue()
+                          +" from "
+                          +newLocation);
+      newQuestion = input.nextLine();
+      
+      leafNode.setRight(new TreeNode(leafNode.getValue()));
+      leafNode.setLeft(new TreeNode(newLocation));
+      leafNode.setValue(newQuestion);
     }
   }
 
