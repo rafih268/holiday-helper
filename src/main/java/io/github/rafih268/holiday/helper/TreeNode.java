@@ -1,9 +1,9 @@
 package io.github.rafih268.holiday.helper;
 
 public class TreeNode {
-  String value;
-  TreeNode left;
-  TreeNode right;
+  private String value;
+  private TreeNode left;
+  private TreeNode right;
 
   // Leaf node
   public TreeNode(String value) {
@@ -29,6 +29,18 @@ public class TreeNode {
 
   public TreeNode getRight() {
     return right;
+  }
+  
+  public void setValue(String value) {
+    this.value = value;
+  }
+
+  public void setLeft(TreeNode left) {
+    this.left = left;
+  }
+
+  public void setRight(TreeNode right) {
+    this.right = right;
   }
 
   public boolean isLeaf() {
